@@ -12,16 +12,16 @@ const AllProducts = () => {
       });
   }, []);
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto my-10">
       <h2>Products: {products.length}</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {products.map((product) => (
-          <div key={product._id} className="card bg-base-100 hover:scale-105 transition duration-300 shadow-sm">
+          <div key={product._id} className="card bg-base-100 hover:scale-105 transition duration-300 shadow-md">
             <figure className="px-4 pt-4">
               <img
                 src={product.image}
                 alt={product.title}
-                className="w-full h-60 object-cover rounded-t-xl"
+                className="w-full h-60 object-cover rounded-xl"
               />
             </figure>
             <div className="card-body">

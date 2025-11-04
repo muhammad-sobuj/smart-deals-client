@@ -98,7 +98,7 @@ const ProductDetails = () => {
 
   return (
     <div className="container mx-auto">
-      <div className=" flex gap-6 items-center m-auto">
+      <div className=" md:flex gap-6 items-center m-auto">
         <div className="">
           <img src={image} alt={title} className="w-full h-80 object-cover rounded-xl" />
           <p className="text-lg">Product Description</p>
