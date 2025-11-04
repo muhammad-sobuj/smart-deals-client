@@ -15,6 +15,7 @@ const Home = () => {
           latestProductsPromise={latestProductsPromise}
         ></LatestProducts>
       </Suspense>
+      
     </div>
   );
 };

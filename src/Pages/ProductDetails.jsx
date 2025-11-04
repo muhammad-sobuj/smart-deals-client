@@ -30,17 +30,20 @@ const ProductDetails = () => {
     usage,
   } = product || {};
   // console.log(product);
-
   useEffect(() => {
-    if (productId) {
-      fetch(`http://localhost:3000/product/bids/${productId}`)
+    
+      fetch(`http://localhost:3000/product/bids/${productId}`,{
+        headers:{
+          authorization:`Bearer ${user.accessToken}`
+        }
+      })
         .then((res) => res.json())
         .then((data) => {
           console.log("bids for this product", data);
           setBids(data);
         });
-    }
-  }, [productId]);
+  
+  }, [productId,user]);
 
   const handleBidModalOpen = () => {
     bidModalRef.current.showModal();
@@ -97,7 +100,7 @@ const ProductDetails = () => {
     <div className="container mx-auto">
       <div className=" flex gap-6 items-center m-auto">
         <div className="">
-          <img src={image} alt={title} />
+          <img src={image} alt={title} className="w-full h-80 object-cover rounded-xl" />
           <p className="text-lg">Product Description</p>
           <div className="">
             <p>Category: {category}</p>
