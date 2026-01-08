@@ -7,11 +7,12 @@ const AllProducts = () => {
     fetch("http://localhost:3000/allProducts", {})
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setProducts(data);
       });
   }, []);
   return (
+    <div className="bg-base-200">
     <div className="container mx-auto my-10">
       <h2>Products: {products.length}</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -41,6 +42,7 @@ const AllProducts = () => {
           </div>
         ))}
       </div>
+    </div>
     </div>
   );
 };
